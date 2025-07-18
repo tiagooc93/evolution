@@ -1,0 +1,47 @@
+services:
+  backend:
+    build:
+      context: ./evolution-app-backend
+    container_name: evolution-app-backend
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL}
+      SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
+    depends_on:
+      - db
+    networks:
+      - my-network
+
+  frontend:
+    build:
+      context: ./evolution-app-frontend
+    container_name: evolution-app-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - my-network
+      
+  db:
+    image: postgres:15
+    container_name: evolution-db
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_evolution_data:/var/lib/postgresql/data
+    networks:
+      - my-network
+
+volumes:
+  postgres_evolution_data:
+
+networks:
+  my-network:
+    driver: bridge
