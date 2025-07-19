@@ -52,12 +52,7 @@ function Home() {
   const [openAddActivityModal, setOpenAddActivityModal] = useState(false);
   const handleOpenAddActivityModal = () => setOpenAddActivityModal(true);
   const handleCloseAddActivityModal = () => setOpenAddActivityModal(false);
-  const [activities, setActivities] = useState([
-    ["", "", 0, 0],
-    ["", "", 0, 0],
-    ["", "", 0, 0],
-    ["", "", 0, 0],
-  ]);
+  const [activities, setActivities] = useState([]);
 
   function validateAddedActivity() {
     if (!name.trim()) return false;
