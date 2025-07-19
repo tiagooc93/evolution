@@ -49,12 +49,7 @@ function AllTimeActivies() {
     navigate("/home/statistics/graphics");
   }
 
-  const [activities, setActivities] = useState([
-    ["", "", 0, 0],
-    ["", "", 0, 0],
-    ["", "", 0, 0],
-    ["", "", 0, 0],
-  ]);
+  const [activities, setActivities] = useState([]);
 
   const [activitiesInformation, setActivitiesInformation] = useState([]);
 
