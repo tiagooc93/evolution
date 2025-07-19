@@ -33,7 +33,7 @@ public class WorkController {
 
     @GetMapping("/{activityId}")
     public ResponseEntity<Double> getTodayWorkFromActivity(@PathVariable Long activityId){
-        log.info("POST /api/work/{} called", activityId);
+        log.info("GET /api/work/{} called", activityId);
         return ResponseEntity.ok(workService.activityWorkToday(activityId));
 
     }
