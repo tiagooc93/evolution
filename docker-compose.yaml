@@ -1,8 +1,8 @@
 services:
   backend:
     build:
-      context: ./evolution-app-backend
-    container_name: evolution-app-backend
+      context: ./evolution-backend
+    container_name: evolution-backend
     ports:
       - "8080:8080"
     environment:
@@ -16,8 +16,8 @@ services:
 
   frontend:
     build:
-      context: ./evolution-app-frontend
-    container_name: evolution-app-frontend
+      context: ./evolution-frontend
+    container_name: evolution-frontend
     ports:
       - "3000:80"
     depends_on:
