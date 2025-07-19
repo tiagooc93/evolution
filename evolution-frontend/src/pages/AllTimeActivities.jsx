@@ -190,7 +190,12 @@ function AllTimeActivies() {
 
                 const isLastDay = index === activities.length - 1;
 
-                let totalDayWorkLastDay, totalDayWorkToday;
+                let totalDayWorkLastDay = 0,
+                  totalDayWorkToday = 0;
+
+                if (activities.length == 1) {
+                  totalDayWorkToday = activities[0][3];
+                }
 
                 if (index > 0) {
                   if (isLastDay) {
