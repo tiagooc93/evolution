@@ -1,6 +1,7 @@
 package com.tiago.evolution_app.service;
 
 import com.tiago.evolution_app.model.Work;
+import com.tiago.evolution_app.repository.ActivityRepository;
 import com.tiago.evolution_app.repository.UserRepository;
 import com.tiago.evolution_app.repository.WorkRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -26,6 +27,9 @@ public class WorkService {
 
     @Autowired
     UserRepository userRepository;
+
+    @Autowired
+    ActivityRepository activityRepository;
 
     public Work saveWork(@RequestBody Work work){
         log.info("Saving Work {}", work.toString());
@@ -64,7 +68,7 @@ public class WorkService {
     public Double activityWorkToday(Long activityId){
         log.info("Calculating all work done today on activity of ID: {}", activityId);
 
-        if(!workRepository.existsById(activityId)){
+        if(!activityRepository.existsById(activityId)){
             throw new RuntimeException("Activity of given Id does not exist");
         }
 
