@@ -64,14 +64,14 @@ sudo docker-compose up
 
 By default, the services will be accessible at:
 
-    Frontend: http://localhost:3000
+    Frontend: http://localhost:3000/home
 
     Backend: http://localhost:8080
     
 Just open your browser and visit:
 
 ```bash
-localhost:3000/
+localhost:3000/home
 ``````
 
 
