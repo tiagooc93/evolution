@@ -12,6 +12,13 @@
 
 # Created by https://www.gitignore.io/api/git,java,maven,eclipse,windows
 
+# Environment files
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
 ### Eclipse ###
 
 .metadata
