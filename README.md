@@ -66,7 +66,7 @@ By default, the services will be accessible at:
 
     Frontend: http://localhost:3000
 
-    Backend: http://localhost:8000
+    Backend: http://localhost:8080
     
 Just open your browser and visit:
 
